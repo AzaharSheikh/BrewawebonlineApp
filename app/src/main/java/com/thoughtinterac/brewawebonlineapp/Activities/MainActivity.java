@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity
 //hiii azhar
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //hi as
     }
 
     @Override
