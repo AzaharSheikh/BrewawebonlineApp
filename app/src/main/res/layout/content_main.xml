@@ -19,18 +19,13 @@ android:orientation="vertical">
 
 
 <ImageView
-    android:layout_width="wrap_content"
+    android:id="@+id/img_dashboard"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="0dp"
     android:src="@drawable/img1"
     android:adjustViewBounds="true"
-    android:duration="1000"
-    android:fromXScale="1.0"
-    android:fromYScale="1.0"
-    android:pivotX="50%"
-    android:pivotY="50%"
-    android:toXScale="0.5"
-    android:toYScale="0.5"
+
     />
 
 

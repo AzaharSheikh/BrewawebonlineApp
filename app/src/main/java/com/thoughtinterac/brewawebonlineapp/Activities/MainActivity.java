@@ -14,13 +14,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.thoughtinterac.brewawebonlineapp.R;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,Animation.AnimationListener {
 
+    Animation zoomOut;
+    ImageView img_dashboard;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,11 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         //hi as
+        zoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.zoom_out_anim);
+        zoomOut.setAnimationListener(this);
+        img_dashboard=(ImageView)findViewById(R.id.img_dashboard);
+        img_dashboard.startAnimation(zoomOut);
     }
 
     @Override
@@ -95,17 +103,21 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zoomout);
 
-        TextView txtMessage = (TextView) findViewById(R.id.txtMessage);
+    @Override
+    public void onAnimationStart(Animation animation) {
 
-        // load the animation
-        Animation animZoomout = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.Zoom_out);
-    }*/
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+
+    }
 }
 
 
