@@ -1,4 +1,4 @@
-package com.thoughtinterac.brewawebonlineapp.Activities;
+package com.thoughtinteract.brewawebonlineapp.Activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,7 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.thoughtinterac.brewawebonlineapp.R;
+import com.thoughtinteract.brewawebonlineapp.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,Animation.AnimationListener {
@@ -45,6 +45,11 @@ public class MainActivity extends AppCompatActivity
         zoomOut.setAnimationListener(this);
         img_dashboard=(ImageView)findViewById(R.id.img_dashboard);
         img_dashboard.startAnimation(zoomOut);
+        fetchListData();
+    }
+
+    private void fetchListData() {
+
     }
 
     @Override
