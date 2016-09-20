@@ -9,32 +9,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
+        android:weightSum="10"
         android:background="@drawable/upper_corner_round"
         android:orientation="vertical">
 
 
-        <ImageView
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/thumbnail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
+            android:layout_height="0dp"
+            android:layout_weight="5"
             android:src="@drawable/image2"
             android:adjustViewBounds="true"
             />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+
+            android:layout_height="0dp"
+            android:layout_weight="5"
             android:background="@color/gray"
             android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/title"
             android:text="SugarBox"
             android:textStyle="bold"
             android:textSize="20dp"
             android:padding="10dp"
-
-            android:id="@+id/textView2" />
+ />
 
         <TextView
             android:layout_width="match_parent"
@@ -44,7 +48,7 @@
             android:padding="10dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
-            android:id="@+id/textView3"
+            android:id="@+id/txt_p_details"
             android:textAlignment="inherit"
             android:layout_gravity="left"
 
@@ -58,7 +62,7 @@
             android:text="A/1604 Vasundhara kanakia spaces, Glady alwares road opp, Lokpuram gate no 1, Thane West, Navi Mumbai – 400610"
             android:textSize="18dp"
             android:padding="10dp"
-            android:id="@+id/textView4" />
+            android:id="@+id/p_address" />
 
         <Button
             style="?android:attr/buttonStyleSmall"

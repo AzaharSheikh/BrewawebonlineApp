@@ -28,8 +28,6 @@ android:orientation="vertical">
     />
 <ListView
     android:id="@+id/list"
-   android:dividerHeight="1dp"
-    android:divider="@color/buttonbackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 

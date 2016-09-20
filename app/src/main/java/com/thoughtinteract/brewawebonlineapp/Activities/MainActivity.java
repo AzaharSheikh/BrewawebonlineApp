@@ -1,8 +1,11 @@
 package com.thoughtinteract.brewawebonlineapp.Activities;
 
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,15 +18,31 @@ import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.thoughtinteract.brewawebonlineapp.CustomAdapter.ProductCustomListAdapter;
+import com.thoughtinteract.brewawebonlineapp.Model.Product;
 import com.thoughtinteract.brewawebonlineapp.R;
+import com.thoughtinteract.brewawebonlineapp.Utils.makeServiceCall;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,Animation.AnimationListener {
 
     Animation zoomOut;
     ImageView img_dashboard;
+    String data;
+    private List<Product> productList = new ArrayList<Product>();
+    private ListView listView;
+    private ProductCustomListAdapter adapter;
+    private ProgressDialog pDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +64,13 @@ public class MainActivity extends AppCompatActivity
         zoomOut.setAnimationListener(this);
         img_dashboard=(ImageView)findViewById(R.id.img_dashboard);
         img_dashboard.startAnimation(zoomOut);
+        listView = (ListView) findViewById(R.id.list);
+
         fetchListData();
     }
 
     private void fetchListData() {
-
+        new fetchListDataAsync().execute("http://172.17.11.18/brewawebonlinePHP/product_list.php");
     }
 
     @Override
@@ -122,6 +143,64 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onAnimationRepeat(Animation animation) {
 
+    }
+
+    private class fetchListDataAsync extends AsyncTask<String, Void, String> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(MainActivity.this);
+            // Showing progress dialog before making http request
+            pDialog.setMessage("Loading...");
+            pDialog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            String url = params[0];
+            try {
+                data = new makeServiceCall().makeServiceCall(url);
+            } catch (Exception e) {
+                e.printStackTrace();
+                data="";
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            Log.d("data",data);
+            pDialog.dismiss();
+            if(data != null && !data.equalsIgnoreCase(""))
+            {
+                try {
+                    JSONArray json = new JSONArray(data);
+                    for(int i =0; i<json.length();i++)
+                    {
+                        if(json.getJSONObject(i).has("product_id")) {
+                            String product_id = json.getJSONObject(i).getString("product_id");
+                            String product_title = json.getJSONObject(i).getString("product_title");
+                            String product_details = json.getJSONObject(i).getString("product_details");
+                            String p_address = json.getJSONObject(i).getString("p_address");
+                            String image_url = json.getJSONObject(i).getString("image_url");
+                            Log.d("product_id",product_id);
+                            Product product = new Product();
+                            product.setTitle(product_title);
+                            product.setP_details(product_details);
+                            product.setP_address(p_address);
+                            product.setThumbnailUrl(image_url);
+                            productList.add(product);
+                        }
+
+                    }
+                    adapter = new ProductCustomListAdapter(MainActivity.this, productList);
+                    listView.setAdapter(adapter);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
 
