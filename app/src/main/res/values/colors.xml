@@ -6,6 +6,7 @@
     <color name="buttonbackground">#A70D0D</color>
 
     <color name="white">#ffffff</color>
-    <color name="layoutbackground">#81726A</color>
+    <color name="layoutbackground">#66777d</color>
+    <color name="gray">#f4f4f4</color>
 
 </resources>

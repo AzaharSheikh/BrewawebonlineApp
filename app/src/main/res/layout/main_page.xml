@@ -21,8 +21,13 @@
             android:adjustViewBounds="true"
             />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray"
+            android:orientation="vertical">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SugarBox"
             android:textStyle="bold"
@@ -48,7 +53,7 @@
             />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="A/1604 Vasundhara kanakia spaces, Glady alwares road opp, Lokpuram gate no 1, Thane West, Navi Mumbai – 400610"
             android:textSize="18dp"
@@ -66,6 +71,7 @@
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white"
             />
+        </LinearLayout>
 
 
     </LinearLayout>
