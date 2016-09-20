@@ -56,7 +56,6 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="Subscribe"
-
             android:id="@+id/button"
             android:textColor="@color/white"
             android:background="@color/subscribe"
