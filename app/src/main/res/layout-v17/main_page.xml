@@ -14,9 +14,10 @@
             android:layout_height="wrap_content"
             android:src="@drawable/image2"
             android:adjustViewBounds="true"
+            android:padding="7dp"
+            android:background="#66777D"
+
             />
-
-
 
 
         <TextView
@@ -40,7 +41,6 @@
             android:id="@+id/textView3"
             android:textAlignment="inherit"
             android:layout_gravity="left"
-
             android:gravity="left"
 
             />
@@ -54,6 +54,8 @@
             android:id="@+id/textView4" />
 
         <Button
+
+
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,6 +63,7 @@
             android:id="@+id/button"
             android:background="@color/buttonbackground"
             android:textColor="@color/buttontext"
+            android:shape="oval"
             />
 
 
