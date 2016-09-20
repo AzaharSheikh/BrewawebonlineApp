@@ -49,13 +49,6 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/light_yellow"
-        >
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,36 +57,39 @@
             android:background="@drawable/rd_corner_bt"
 
             >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Subscribe to our mailing list"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:id="@+id/editText"
-            android:background="@drawable/rd_corner_bt"
-            android:layout_gravity="center_horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subscribe to our mailing list"/>
 
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:padding="10dp"
-            android:text="Subscribe"
-            android:id="@+id/button"
-            android:textColor="@color/white"
-            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/layout_border"
+                />
 
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:text="Subscribe"
 
-    </LinearLayout>
+                android:id="@+id/button"
+                android:textColor="@color/white"
+                android:background="@color/subscribe"
+                />
+
 </LinearLayout>
         </LinearLayout>
 </ScrollView>
     </LinearLayout>
+
 
 

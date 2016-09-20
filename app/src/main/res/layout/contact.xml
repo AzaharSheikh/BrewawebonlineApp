@@ -45,7 +45,9 @@
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/editText"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/layout_border"
+            />
 
         <Button
             style="?android:attr/buttonStyleSmall"
