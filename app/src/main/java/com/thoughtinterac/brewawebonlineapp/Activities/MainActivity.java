@@ -12,6 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 import com.thoughtinterac.brewawebonlineapp.R;
 
@@ -92,4 +95,18 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    /*@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_zoomout);
+
+        TextView txtMessage = (TextView) findViewById(R.id.txtMessage);
+
+        // load the animation
+        Animation animZoomout = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.Zoom_out);
+    }*/
 }
+
+
+
