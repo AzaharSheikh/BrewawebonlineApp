@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/layoutbackground"
+
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="@drawable/upper_corner_round"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:src="@drawable/image2"
+            android:adjustViewBounds="true"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -13,28 +27,45 @@
             android:text="SugarBox"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:layout_marginTop="200dp"
+            android:padding="10dp"
 
             android:id="@+id/textView2" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Specialist in cakes, cupcakes and muffins for all occasions."
             android:textSize="18dp"
-            android:layout_marginTop="220dp"
+            android:padding="10dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
             android:id="@+id/textView3"
-            android:textAlignment="inherit" />
+            android:textAlignment="inherit"
+            android:layout_gravity="left"
+
+            android:gravity="left"
+
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="A/1604 Vasundhara kanakia spaces, Glady alwares road opp, Lokpuram gate no 1, Thane West, Navi Mumbai – 400610"
+            android:textSize="18dp"
+            android:padding="10dp"
             android:id="@+id/textView4" />
 
-
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:text="Visit Page"
+            android:id="@+id/button"
+            android:background="@drawable/round_corner_button"
+            android:textColor="@color/white"
+            />
 
 
     </LinearLayout>
