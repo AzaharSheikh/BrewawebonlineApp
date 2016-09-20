@@ -37,7 +37,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Subscribe to our mailing list"/>
+            android:text="Subscribe to our mailing list"
+            android:textSize="20dp"
+            android:textColor="@color/text_clr"
+            android:textStyle="bold"
+            />
 
         <EditText
             android:layout_width="match_parent"
@@ -47,11 +51,12 @@
             android:id="@+id/editText"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/layout_border"
+            android:padding="12dp"
             />
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:padding="10dp"
