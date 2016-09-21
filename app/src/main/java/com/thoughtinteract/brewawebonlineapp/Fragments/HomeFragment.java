@@ -84,7 +84,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.content_main, container, false);
         listView = (ListView) rootView.findViewById(R.id.list);
-
+        listView.setDivider(null);
         ViewGroup header = (ViewGroup)inflater.inflate(R.layout.header, listView, false);
         ViewGroup footer = (ViewGroup)inflater.inflate(R.layout.list_view_footer, listView, false);
         listView.addHeaderView(header, null, false);
