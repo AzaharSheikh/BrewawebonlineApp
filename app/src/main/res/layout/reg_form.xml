@@ -43,7 +43,7 @@
                     android:gravity="left"
                     android:textColor="@color/white"
                     android:id="@+id/textView2"
-                    android:layout_marginTop="50dp" />
+                     />
 
                 <EditText
                     android:layout_width="match_parent"

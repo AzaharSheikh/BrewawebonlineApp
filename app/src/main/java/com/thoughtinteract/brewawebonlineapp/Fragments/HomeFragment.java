@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.thoughtinteract.brewawebonlineapp.CustomAdapter.ProductCustomListAdapter;
@@ -31,7 +34,7 @@ import java.util.List;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements Animation.AnimationListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -47,6 +50,8 @@ public class HomeFragment extends Fragment {
     private ListView listView;
     private ProductCustomListAdapter adapter;
     private ProgressDialog pDialog;
+    Animation zoomOut;
+    ImageView img_dashboard;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -89,6 +94,11 @@ public class HomeFragment extends Fragment {
         ViewGroup footer = (ViewGroup)inflater.inflate(R.layout.list_view_footer, listView, false);
         listView.addHeaderView(header, null, false);
         listView.addFooterView(footer, null, false);
+        zoomOut = AnimationUtils.loadAnimation(getActivity(),
+                R.anim.zoom_out_anim);
+        zoomOut.setAnimationListener(this);
+        img_dashboard=(ImageView)rootView.findViewById(R.id.img_dashboard);
+        img_dashboard.startAnimation(zoomOut);
         fetchListData();
         return rootView;
     }
@@ -96,6 +106,22 @@ public class HomeFragment extends Fragment {
     private void fetchListData() {
         new fetchListDataAsync().execute("http://172.17.11.18:80/brewawebonlinePHP/product_list.php");
     }
+
+    @Override
+    public void onAnimationStart(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+
+    }
+
     private class fetchListDataAsync extends AsyncTask<String, Void, String> {
         @Override
         protected void onPreExecute() {
