@@ -22,22 +22,34 @@
                 android:layout_width="match_parent"
                 android:background="@color/layoutbackground"
                 android:orientation="horizontal"
+                android:weightSum="10"
                 android:layout_height="wrap_content">
                 <EditText
                     android:gravity="center"
-                    android:layout_weight="8"
-                    android:layout_margin="15dp"
+                    android:layout_weight="6"
+                    android:textSize="15dp"
+                    android:layout_margin="10dp"
                     android:hint="Search your locality"
                     android:layout_width="0dp"
                     android:background="@drawable/layout_border"
                     android:layout_height="match_parent" />
-
-                <ImageButton
-                    android:layout_width="0dp"
+                <Button
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="GO"
                     android:layout_weight="2"
-                    android:src="@drawable/radiomicrophone"
-                    android:layout_height="match_parent"
-                    />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                   android:background="@drawable/radiomicrophone"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
             </LinearLayout>
 
         </LinearLayout>

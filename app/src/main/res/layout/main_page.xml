@@ -32,7 +32,8 @@
             android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:id="@+id/title"
             android:text="SugarBox"
             android:textStyle="bold"
@@ -42,9 +43,10 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:text="Specialist in cakes, cupcakes and muffins for all occasions."
             android:textSize="18dp"
+            android:layout_weight="1"
             android:padding="10dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
@@ -58,20 +60,21 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:text="A/1604 Vasundhara kanakia spaces, Glady alwares road opp, Lokpuram gate no 1, Thane West, Navi Mumbai – 400610"
             android:textSize="18dp"
+            android:layout_weight="1"
             android:padding="10dp"
             android:id="@+id/p_address" />
 
         <Button
-            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
             android:padding="10dp"
+            android:layout_weight="1"
             android:text="Visit Page"
-            android:id="@+id/button"
+            android:id="@+id/btn_site_visit"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white"
             />
