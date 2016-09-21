@@ -3,4 +3,134 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/voucherback"
+            tools:context=".MainActivity" >
+
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="CLOSE"
+                    android:gravity="right"
+                    android:id="@+id/button"
+                    android:textColor="@color/white"
+                    android:background="@color/button"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register for Voucher"
+                    android:textStyle="bold"
+                    android:textSize="35dp"
+                    android:padding="40dp"
+                    android:gravity="left"
+                    android:textColor="@color/white"
+                    android:id="@+id/textView2"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your Name*"
+                    android:textSize="25dp"
+                    android:padding="50dp"
+                    android:gravity="left"
+                    android:textColor="@color/white"
+                    android:id="@+id/textView2"
+                    android:layout_marginTop="50dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText2"
+                    android:layout_alignBottom="@+id/textView2"
+                    android:padding="8dp"
+                    android:background="@drawable/layout_border"
+                    android:ems="10"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your Name*"
+                    android:textSize="25dp"
+                    android:padding="50dp"
+                    android:textColor="@color/white"
+                    android:id="@+id/textView2"
+                    android:gravity="left"
+                    android:layout_marginTop="50dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email Id*"
+                    android:id="@+id/textView3"
+                    android:layout_below="@+id/editText2"
+                    android:gravity="left"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:padding="10dp"
+                     />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/editText3"
+                    android:layout_below="@+id/textView3"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:padding="8dp"
+                    android:background="@drawable/layout_border"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile"
+                    android:id="@+id/textView4"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    android:gravity="left"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:ems="10"
+                    android:id="@+id/editText4"
+                    android:layout_below="@+id/textView4"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/layout_border"
+                    android:padding="8dp"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Register"
+                    android:id="@+id/button9"
+                    android:layout_below="@+id/editText4"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="56dp"
+                    android:textColor="@color/white"
+                    android:background="@color/subscribe"/>
+
+
+        </RelativeLayout>
 </LinearLayout>

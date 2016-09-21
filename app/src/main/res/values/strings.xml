@@ -20,5 +20,8 @@ Gone are the days of searching. All the cafes, resto bars, restaurants, patisser
         <item>Cafe</item>
         <item>Contact Us</item>
     </string-array>
+    
+    <string name="register">Register for Voucherr</string>
+
 </resources>
 
