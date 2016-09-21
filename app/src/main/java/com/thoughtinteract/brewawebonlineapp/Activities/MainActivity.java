@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity
     private DrawerLayout drawer;
     private View navHeader;
     // tags used to attach the fragments
-    private static final String TAG_HOME = "home";
+    private static final String TAG_HOME = "Home";
     private static final String TAG_ABOUT = "About";
-    private static final String TAG_OFFERS = "offers";
+    private static final String TAG_OFFERS = "Offers";
     private static final String TAG_CAFE = "Cafe";
     private static final String TAG_CONTACT_US = "Contact Us";
     public static String CURRENT_TAG = TAG_HOME;
@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity
         zoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.zoom_out_anim);
         zoomOut.setAnimationListener(this);
-        img_dashboard=(ImageView)findViewById(R.id.img_dashboard);
-        img_dashboard.startAnimation(zoomOut);
+//        img_dashboard=(ImageView)findViewById(R.id.img_dashboard);
+//        img_dashboard.startAnimation(zoomOut);
         listView = (ListView) findViewById(R.id.list);
 
         fetchListData();
@@ -225,6 +225,7 @@ public class MainActivity extends AppCompatActivity
 
                     default:
                         navItemIndex = 0;
+                        CURRENT_TAG = TAG_HOME;
                 }
 
                 //Checking if the item is in checked state or not, if not make it in checked state
@@ -233,7 +234,7 @@ public class MainActivity extends AppCompatActivity
                 } else {
                     menuItem.setChecked(true);
                 }
-                menuItem.setChecked(true);
+               // menuItem.setChecked(true);
 
                 loadHomeFragment();
 
