@@ -64,12 +64,11 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="Register now"
-            android:id="@+id/button"
+            android:id="@+id/button1"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white"
 
             />
-
 
         <ImageView
             android:layout_width="wrap_content"
@@ -77,8 +76,40 @@
             android:paddingTop="20dp"
             android:src="@drawable/v3"
             android:adjustViewBounds="true"
-            android:background="@color/imgback"
+            android:background="@color/imgback"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Le zeppelin Voucher"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@color/vcolor"
             />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get 10% off on a minimum bill of Rs. 150.to avail voucher!"
+            android:textSize="18dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@color/vcolor"
+            />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:text="Register now"
+            android:id="@+id/button2"
+            android:background="@drawable/round_corner_button"
+            android:textColor="@color/white" />
 
         </LinearLayout>
     </ScrollView>
