@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/upper_corner_round"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Offers &amp; Vouchers | Brew A Web"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:gravity="center" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:src="@drawable/v1"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:src="@drawable/v2"
+            android:adjustViewBounds="true"
+            android:background="@color/imgback"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="70 beans Vouchers"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:gravity="center" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get 10% off on your total food bill.to avail voucher!"
+            android:textSize="18dp"
+            android:padding="10dp"
+            android:gravity="center" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:text="Register now"
+            android:id="@+id/button"
+            android:background="@drawable/round_corner_button"
+            android:textColor="@color/white"
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:src="@drawable/v3"
+            android:adjustViewBounds="true"
+            android:background="@color/imgback"
+            />
+
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>

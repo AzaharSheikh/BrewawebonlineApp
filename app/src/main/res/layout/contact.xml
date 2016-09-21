@@ -41,6 +41,8 @@
             android:textSize="20dp"
             android:textColor="@color/text_clr"
             android:textStyle="bold"
+            android:gravity="center"
+            android:padding="10dp"
             />
 
         <EditText
@@ -58,12 +60,12 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:padding="10dp"
+          android:padding="10dp"
             android:text="Subscribe"
             android:id="@+id/button"
             android:textColor="@color/white"
             android:background="@color/subscribe"
+            android:layout_marginTop="10dp"
             />
         </LinearLayout>
 
