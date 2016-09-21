@@ -1,14 +1,26 @@
 package com.thoughtinteract.brewawebonlineapp.Fragments;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import com.thoughtinteract.brewawebonlineapp.CustomAdapter.ProductCustomListAdapter;
+import com.thoughtinteract.brewawebonlineapp.Model.Product;
 import com.thoughtinteract.brewawebonlineapp.R;
+import com.thoughtinteract.brewawebonlineapp.Utils.makeServiceCall;
+
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -30,7 +42,11 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-
+    String data;
+    private List<Product> productList = new ArrayList<Product>();
+    private ListView listView;
+    private ProductCustomListAdapter adapter;
+    private ProgressDialog pDialog;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -66,9 +82,72 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.content_main, container, false);
+        View rootView = inflater.inflate(R.layout.content_main, container, false);
+        listView = (ListView) rootView.findViewById(R.id.list);
+        fetchListData();
+        return rootView;
     }
 
+    private void fetchListData() {
+        new fetchListDataAsync().execute("http://172.17.11.18:80/brewawebonlinePHP/product_list.php");
+    }
+    private class fetchListDataAsync extends AsyncTask<String, Void, String> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(getActivity());
+            // Showing progress dialog before making http request
+            pDialog.setMessage("Loading...");
+            pDialog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            String url = params[0];
+            try {
+                data = new makeServiceCall().makeServiceCall(url);
+            } catch (Exception e) {
+                e.printStackTrace();
+                data="";
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            Log.d("data",data);
+            pDialog.dismiss();
+            if(data != null && !data.equalsIgnoreCase(""))
+            {
+                try {
+                    JSONArray json = new JSONArray(data);
+                    for(int i =0; i<json.length();i++)
+                    {
+                        if(json.getJSONObject(i).has("product_id")) {
+                            String product_id = json.getJSONObject(i).getString("product_id");
+                            String product_title = json.getJSONObject(i).getString("product_title");
+                            String product_details = json.getJSONObject(i).getString("product_details");
+                            String p_address = json.getJSONObject(i).getString("p_address");
+                            String image_url = json.getJSONObject(i).getString("image_url");
+                            Log.d("product_id",product_id);
+                            Product product = new Product();
+                            product.setTitle(product_title);
+                            product.setP_details(product_details);
+                            product.setP_address(p_address);
+                            product.setThumbnailUrl(image_url);
+                            productList.add(product);
+                        }
+
+                    }
+                    adapter = new ProductCustomListAdapter(getActivity(), productList);
+                    listView.setAdapter(adapter);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
