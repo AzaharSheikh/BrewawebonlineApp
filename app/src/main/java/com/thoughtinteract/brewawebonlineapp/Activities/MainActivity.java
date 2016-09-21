@@ -88,17 +88,12 @@ public class MainActivity extends AppCompatActivity
             loadHomeFragment();
         }
 
-        // load toolbar titles from string resources
-        //activityTitles = getResources().getStringArray(R.array.nav_item_activity_titles);
-//comment
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-//hiii azhar
 
-        //hi as
         zoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.zoom_out_anim);
         zoomOut.setAnimationListener(this);
@@ -123,8 +118,6 @@ public class MainActivity extends AppCompatActivity
         if (getSupportFragmentManager().findFragmentByTag(CURRENT_TAG) != null) {
             drawer.closeDrawers();
 
-            // show or hide the fab button
-           // toggleFab();
             return;
         }
 
