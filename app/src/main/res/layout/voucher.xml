@@ -67,6 +67,7 @@
             android:id="@+id/button"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white"
+
             />
 
 
