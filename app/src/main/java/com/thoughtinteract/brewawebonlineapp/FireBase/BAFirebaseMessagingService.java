@@ -1,4 +1,4 @@
-package com.thoughtinteract.brewawebonlineapp.FiberBase;
+package com.thoughtinteract.brewawebonlineapp.FireBase;
 
 /**
  * Created by AzaharSheikh on 22-09-2016.
