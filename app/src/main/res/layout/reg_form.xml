@@ -17,7 +17,7 @@
                     android:padding="10dp"
                     android:text="CLOSE"
                     android:layout_gravity="end"
-                    android:id="@+id/button"
+                    android:id="@+id/bt_close"
                     android:textColor="@color/white"
                     android:background="@color/button"
                     />
@@ -32,7 +32,7 @@
                     android:padding="5dp"
                     android:gravity="left"
                     android:textColor="@color/white"
-                    android:id="@+id/textView2"/>
+                    android:id="@+id/tx_register"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -42,14 +42,14 @@
                     android:padding="10dp"
                     android:gravity="left"
                     android:textColor="@color/white"
-                    android:id="@+id/textView2"
+                    android:id="@+id/tx_yourname"
                      />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText2"
-                    android:layout_alignBottom="@+id/textView2"
+                    android:id="@+id/ed_yourname"
+                    android:layout_alignBottom="@+id/textView6"
                     android:padding="8dp"
                     android:background="@drawable/layout_border"
                     android:ems="10"
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:text="Email Id*"
                     android:id="@+id/textView3"
-                    android:layout_below="@+id/editText2"
+                    android:layout_below="@+id/tx_emailid"
                     android:gravity="left"
                     android:textSize="25dp"
                     android:textColor="@color/white"
@@ -72,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:id="@+id/editText3"
+                    android:id="@+id/ed_emailid"
                     android:padding="10dp"
                     android:background="@drawable/layout_border"/>
 
@@ -80,7 +80,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Mobile"
-                    android:id="@+id/textView4"
+                    android:id="@+id/tx_mobile"
                     android:textColor="@color/white"
                     android:textSize="25dp"
                     android:padding="10dp"
@@ -92,7 +92,7 @@
                     android:inputType="phone"
                     android:ems="10"
                     android:id="@+id/editText4"
-                    android:layout_below="@+id/textView4"
+                    android:layout_below="@+id/ed_mobile"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:background="@drawable/layout_border"
@@ -103,9 +103,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Register"
-                    android:id="@+id/button9"
+                    android:id="@+id/bt_register"
                     android:textColor="@color/white"
                     android:background="@color/subscribe"
+                    android:layout_marginTop="20dp"
                     />
 
 

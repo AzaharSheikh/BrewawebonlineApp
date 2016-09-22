@@ -64,7 +64,7 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="Register now"
-            android:id="@+id/button1"
+            android:id="@+id/bt1_registernow"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white"
 
@@ -107,7 +107,7 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="Register now"
-            android:id="@+id/button2"
+            android:id="@+id/bt2_registernow"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white" />
 
@@ -148,7 +148,7 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="Register now"
-            android:id="@+id/button3"
+            android:id="@+id/bt2_registernow"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white" />
 
@@ -190,7 +190,7 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="Register now"
-            android:id="@+id/button4"
+            android:id="@+id/bt3_regisrernow"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white" />
 
@@ -231,7 +231,7 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="Register now"
-            android:id="@+id/button5"
+            android:id="@+id/bt4_registernow"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white" />
 
@@ -273,7 +273,7 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="Register now"
-            android:id="@+id/button6"
+            android:id="@+id/bt5_registernow"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white" />
 
@@ -315,7 +315,7 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="Register now"
-            android:id="@+id/button7"
+            android:id="@+id/bt6_registernow"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white" />
 
@@ -356,7 +356,7 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="Register now"
-            android:id="@+id/button8"
+            android:id="@+id/bt7_registernow"
             android:background="@drawable/round_corner_button"
             android:textColor="@color/white" />
 
