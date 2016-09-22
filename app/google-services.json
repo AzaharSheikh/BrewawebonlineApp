@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "171784183769",
+    "firebase_url": "https://brewawebonline-1a870.firebaseio.com",
+    "project_id": "brewawebonline-1a870",
+    "storage_bucket": "brewawebonline-1a870.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171784183769:android:36dbf8c9995297fe",
+        "android_client_info": {
+          "package_name": "com.thoughtinteract.brewawebonlineapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171784183769-nbede1num9ri3lvahebigrmsbkuih4r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO3AYgXmUojfKGhGGCdkaax76XZb9cOcE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
