@@ -1,7 +1,9 @@
 package com.thoughtinteract.brewawebonlineapp.Fragments;
 
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.thoughtinteract.brewawebonlineapp.CustomAdapter.ProductCustomListAdapter;
+import com.thoughtinteract.brewawebonlineapp.Database.DatabaseHandler;
 import com.thoughtinteract.brewawebonlineapp.Model.Product;
 import com.thoughtinteract.brewawebonlineapp.R;
 import com.thoughtinteract.brewawebonlineapp.Utils.makeServiceCall;
@@ -153,6 +156,8 @@ public class HomeFragment extends Fragment implements Animation.AnimationListene
             {
                 try {
                     JSONArray json = new JSONArray(data);
+                    DatabaseHandler handler= new DatabaseHandler(getActivity());
+                    SQLiteDatabase db = handler.getWritableDatabase();
                     for(int i =0; i<json.length();i++)
                     {
                         if(json.getJSONObject(i).has("product_id")) {
@@ -167,6 +172,14 @@ public class HomeFragment extends Fragment implements Animation.AnimationListene
                             product.setP_details(product_details);
                             product.setP_address(p_address);
                             product.setThumbnailUrl(image_url);
+                            ContentValues values = new ContentValues();
+                            values.put(DatabaseHandler.KEY_PRODUCT_ID,product_id);
+                            values.put(DatabaseHandler.KEY_PRODUCT_TITLE,product_title);
+                            values.put(DatabaseHandler.KEY_PRODUCT_DETAILS,product_details);
+                            values.put(DatabaseHandler.KEY_PRODUCT_ADDRESS,p_address);
+                            values.put(DatabaseHandler.KEY_IMAGE_URL,image_url);
+                            boolean b = db.insert(DatabaseHandler.TABLE_PRODUCT,null,values)>0;
+                            Log.d("insertproduct",b+"");
                             productList.add(product);
                         }
 
