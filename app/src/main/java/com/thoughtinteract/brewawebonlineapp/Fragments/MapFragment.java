@@ -1,7 +1,12 @@
 package com.thoughtinteract.brewawebonlineapp.Fragments;
 
-/**
- * Created by AshwiniBadgujar on 23-09-2016.
- */
-public class MapFragment {
-}
+import android.location.Location;
+public class MapFragment extends SupportMapFragment implements GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener,
+        GoogleMap.OnInfoWindowClickListener,
+        GoogleMap.OnMapLongClickListener,
+        GoogleMap.OnMapClickListener,
+        GoogleMap.OnMarkerClickListener {
+
+
+        }
