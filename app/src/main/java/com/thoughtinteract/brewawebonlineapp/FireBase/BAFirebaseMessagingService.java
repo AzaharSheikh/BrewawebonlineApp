@@ -17,6 +17,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import com.thoughtinteract.brewawebonlineapp.Activities.MainActivity;
 import com.thoughtinteract.brewawebonlineapp.R;
 
+import java.util.Random;
 
 
 public class BAFirebaseMessagingService extends FirebaseMessagingService {
@@ -39,6 +40,8 @@ public class BAFirebaseMessagingService extends FirebaseMessagingService {
     private void sendNotification(String messageBody) {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("NotifyMessage",messageBody);
+
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,
                 PendingIntent.FLAG_ONE_SHOT);
 
@@ -53,7 +56,8 @@ public class BAFirebaseMessagingService extends FirebaseMessagingService {
 
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-        notificationManager.notify(0, notificationBuilder.build());
+        Random random = new Random();
+        int m = random.nextInt(9999 - 1000) + 1000;
+        notificationManager.notify(m, notificationBuilder.build());
     }
 }

@@ -1,6 +1,7 @@
 package com.thoughtinteract.brewawebonlineapp.Activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        onNewIntent(getIntent());
         mHandler = new Handler();
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -104,7 +106,19 @@ public class MainActivity extends AppCompatActivity
         fetchListData();
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        Bundle extras = intent.getExtras();
+        if(extras!=null)
+        {
 
+            if(extras.containsKey("NotifyMessage"))
+            {
+                String msg = extras.getString("NotifyMessage");
+                Log.d("NotifyMessage",msg);
+            }
+        }
+    }
 
     private void loadHomeFragment() {
         // selecting appropriate nav menu item
