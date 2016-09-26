@@ -12,7 +12,9 @@ Gone are the days of searching. All the cafes, resto bars, restaurants, patisser
 
     <string name="voucher">70 beans Vouchers</string>
     <string name="voucher1">Get 10% off on your total food bill.to avail voucher!</string>
-
+        <string name="home_headline">A platform for all bistros,cafe, resto-bars, bakeries &amp;\n patisseries. Narrate your stories, your way!</string>
+    <string name="copyright">\u00A9</string>
+    <string name="thoughtinteract"><b><font color='black'>thought</font><font color='yellow'>interact</font>,</b></string>
     <string-array name="nav_item_activity_titles">
         <item>Home</item>
         <item>About</item>

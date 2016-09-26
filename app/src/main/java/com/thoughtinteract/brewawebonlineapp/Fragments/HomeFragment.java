@@ -3,19 +3,24 @@ package com.thoughtinteract.brewawebonlineapp.Fragments;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.thoughtinteract.brewawebonlineapp.CustomAdapter.ProductCustomListAdapter;
 import com.thoughtinteract.brewawebonlineapp.Database.DatabaseHandler;
@@ -55,6 +60,8 @@ public class HomeFragment extends Fragment implements Animation.AnimationListene
     private ProgressDialog pDialog;
     Animation zoomOut;
     ImageView img_dashboard;
+    TextView txt_thought_interact;
+    Button btn_req_listing,btn_go,btn_voice_search;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -102,6 +109,41 @@ public class HomeFragment extends Fragment implements Animation.AnimationListene
         zoomOut.setAnimationListener(this);
         img_dashboard=(ImageView)rootView.findViewById(R.id.img_dashboard);
         img_dashboard.startAnimation(zoomOut);
+        btn_req_listing=(Button)rootView.findViewById(R.id.btn_req_listing);
+        btn_go=(Button)rootView.findViewById(R.id.btn_go);
+        btn_voice_search=(Button)rootView.findViewById(R.id.btn_voice_search);
+        txt_thought_interact=(TextView)rootView.findViewById(R.id.txt_thought_interact);
+        btn_req_listing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getActivity(),"btn_req_listing", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+        });
+        btn_go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getActivity(),"btn_go", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+        });
+        btn_voice_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getActivity(),"btn_voice_search", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+        });
+        txt_thought_interact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://thoughtinteract.com/"));
+                startActivity(browserIntent);
+            }
+        });
         fetchListData();
         return rootView;
     }
