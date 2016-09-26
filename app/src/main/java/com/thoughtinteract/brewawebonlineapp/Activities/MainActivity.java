@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity
         implements Animation.AnimationListener {
 
     Animation zoomOut;
-    ImageView img_dashboard;
+    ImageView img_dashboard,img_share;
     String data;
     private List<Product> productList = new ArrayList<Product>();
     private ListView listView;
@@ -102,8 +102,19 @@ public class MainActivity extends AppCompatActivity
 //        img_dashboard=(ImageView)findViewById(R.id.img_dashboard);
 //        img_dashboard.startAnimation(zoomOut);
         listView = (ListView) findViewById(R.id.list);
-
+        img_share=(ImageView)findViewById(R.id.img_share);
         fetchListData();
+        img_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message = "Brew-A-Web.";
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("text/plain");
+                share.putExtra(Intent.EXTRA_TEXT, message);
+
+                startActivity(Intent.createChooser(share, "Share Via"));
+            }
+        });
     }
 
     @Override
