@@ -47,6 +47,8 @@
 
                 <EditText
                     android:layout_width="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/ed_yourname"
                     android:layout_alignBottom="@+id/textView6"
@@ -72,6 +74,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
                     android:id="@+id/ed_emailid"
                     android:padding="10dp"
                     android:background="@drawable/layout_border"/>
@@ -90,6 +94,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
                     android:ems="10"
                     android:id="@+id/editText4"
                     android:layout_below="@+id/ed_mobile"
@@ -102,6 +108,8 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
                     android:text="Register"
                     android:id="@+id/bt_register"
                     android:textColor="@color/white"

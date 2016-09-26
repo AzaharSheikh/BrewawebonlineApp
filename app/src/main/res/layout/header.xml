@@ -88,17 +88,18 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:text="GO"
-                    android:layout_weight="2"
+                    android:layout_weight="2.5"
                     android:layout_width="0dp"
                     android:layout_height="match_parent" />
 
-                <Button
+                <ImageView
                     android:layout_marginBottom="10dp"
+                    android:padding="5dp"
                     android:id="@+id/btn_voice_search"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
-                   android:background="@drawable/radiomicrophone"
-                    android:layout_weight="2"
+                    android:src="@drawable/radiomicrophone"
+                    android:layout_weight="1.5"
                     android:layout_width="0dp"
                     android:layout_height="match_parent" />
             </LinearLayout>

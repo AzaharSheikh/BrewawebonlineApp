@@ -9,9 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.gms.maps.*;
+/*import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.MarkerOptions;*/
 import com.thoughtinteract.brewawebonlineapp.R;
 
 
@@ -114,7 +114,7 @@ public class ContactUsFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+    /*public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
         private GoogleMap googleMap;
          final LatLng TutorialsPoint = new LatLng(19.0794 , 73);
 
@@ -134,5 +134,5 @@ public class ContactUsFragment extends Fragment {
                     .position(TutorialsPoint)
                     .title("Ambieance Court"));
         }
-}
+}*/
 }

@@ -22,6 +22,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.thoughtinteract.brewawebonlineapp.Activities.RegisterFormActivity;
 import com.thoughtinteract.brewawebonlineapp.CustomAdapter.ProductCustomListAdapter;
 import com.thoughtinteract.brewawebonlineapp.Database.DatabaseHandler;
 import com.thoughtinteract.brewawebonlineapp.Model.Product;
@@ -60,8 +61,9 @@ public class HomeFragment extends Fragment implements Animation.AnimationListene
     private ProgressDialog pDialog;
     Animation zoomOut;
     ImageView img_dashboard;
-    TextView txt_thought_interact;
-    Button btn_req_listing,btn_go,btn_voice_search;
+    TextView txt_thought_interact,edt_search_locality;
+    Button btn_req_listing,btn_go;
+    ImageView btn_voice_search;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -111,22 +113,34 @@ public class HomeFragment extends Fragment implements Animation.AnimationListene
         img_dashboard.startAnimation(zoomOut);
         btn_req_listing=(Button)rootView.findViewById(R.id.btn_req_listing);
         btn_go=(Button)rootView.findViewById(R.id.btn_go);
-        btn_voice_search=(Button)rootView.findViewById(R.id.btn_voice_search);
+        btn_voice_search=(ImageView)rootView.findViewById(R.id.btn_voice_search);
         txt_thought_interact=(TextView)rootView.findViewById(R.id.txt_thought_interact);
+        edt_search_locality=(TextView)rootView.findViewById(R.id.edt_search_locality);
         btn_req_listing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(getActivity(),"btn_req_listing", Toast.LENGTH_SHORT);
+               /* Toast toast = Toast.makeText(getActivity(),"btn_req_listing", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
+                toast.show();*/
+                Intent i = new Intent(getActivity(), RegisterFormActivity.class);
+                startActivity(i);
+                getActivity().overridePendingTransition(R.anim.left_to_right,
+                        R.anim.right_to_left);
             }
         });
         btn_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(getActivity(),"btn_go", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
+                if(!edt_search_locality.getText().toString().trim().equalsIgnoreCase("")) {
+                    Toast toast = Toast.makeText(getActivity(), edt_search_locality.getText().toString().trim(), Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }else
+                {
+                    Toast toast = Toast.makeText(getActivity(),"Please Enter text", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
             }
         });
         btn_voice_search.setOnClickListener(new View.OnClickListener() {
