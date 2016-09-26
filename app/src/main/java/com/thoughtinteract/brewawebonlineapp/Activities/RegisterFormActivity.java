@@ -22,9 +22,9 @@ public class RegisterFormActivity extends Activity {
         bt_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 RegisterFormActivity.this.overridePendingTransition(R.anim.left_to_right,
                         R.anim.right_to_left);
-                finish();
             }
         });
 
