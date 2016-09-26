@@ -9,9 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/*import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;*/
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.thoughtinteract.brewawebonlineapp.R;
 
 
@@ -71,6 +72,7 @@ public class ContactUsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.contact, container, false);
     }
@@ -114,25 +116,30 @@ public class ContactUsFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    /*public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
-        private GoogleMap googleMap;
-         final LatLng TutorialsPoint = new LatLng(19.0794 , 73);
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-            com.google.android.gms.maps.MapFragment mapFragment = (com.google.android.gms.maps.MapFragment) getFragmentManager()
-                    .findFragmentById(R.id.map);
-            mapFragment.getMapAsync(this);
-        }
 
-        @Override
-        public void onMapReady(GoogleMap googleMap) {
+   /* private GoogleMap googleMap;
+    static final LatLng TutorialsPoint = new LatLng(19.0794 , 73);
 
-            googleMap.addMarker(new MarkerOptions()
-                    .position(TutorialsPoint)
-                    .title("Ambieance Court"));
-        }
-}*/
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        MapFragment mapFragment =(MapFragment) getFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(TutorialsPoint)
+                .title("Ambieance Court"));
+    }*/
+
 }
+
+
+
+
