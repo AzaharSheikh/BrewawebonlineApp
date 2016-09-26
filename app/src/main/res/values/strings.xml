@@ -12,7 +12,7 @@ Gone are the days of searching. All the cafes, resto bars, restaurants, patisser
 
     <string name="voucher">70 beans Vouchers</string>
     <string name="voucher1">Get 10% off on your total food bill.to avail voucher!</string>
-    <string name="google_api_key">AIzaSyDC-QFs7156DUSmckrFIlo4uOpztSkKyYw</string>
+
     <string-array name="nav_item_activity_titles">
         <item>Home</item>
         <item>About</item>
