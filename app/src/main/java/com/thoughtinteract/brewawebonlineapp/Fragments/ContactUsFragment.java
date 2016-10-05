@@ -4,13 +4,13 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.thoughtinteract.brewawebonlineapp.R;
@@ -24,7 +24,7 @@ import com.thoughtinteract.brewawebonlineapp.R;
  * Use the {@link ContactUsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ContactUsFragment extends Fragment {
+public class ContactUsFragment extends Fragment implements OnMapReadyCallback {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -63,6 +63,7 @@ public class ContactUsFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -75,11 +76,15 @@ public class ContactUsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.contact, container, false);
+        return inflater.inflate(R.layout.contact, container, false);}
+
+        private void getMapAsync(ContactUsFragment contactUsFragment){
+        ContactUsFragment mapFragment =(ContactUsFragment) getFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+    /* TODO: Rename method, update argument and hook method into UI event */
+    protected void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
@@ -119,25 +124,15 @@ public class ContactUsFragment extends Fragment {
 
 
 
-   /* private GoogleMap googleMap;
+    private GoogleMap googleMap;
     static final LatLng TutorialsPoint = new LatLng(19.0794 , 73);
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        MapFragment mapFragment =(MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-    }
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        googleMap.addMarker(new MarkerOptions()
+        this.googleMap.addMarker(new MarkerOptions()
                 .position(TutorialsPoint)
                 .title("Ambieance Court"));
-    }*/
+    }
 
 }
 

@@ -38,6 +38,15 @@ India."
             android:textColor="@color/white"
             android:background="@color/contacttect"
             />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact No: +91  9930095967 | +91  9428153970 |+91 9820024594"
+            android:textColor="@color/white"
+            android:background="@color/contacttect"
+
+            />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,11 +94,11 @@ India."
 
         </LinearLayout>
 
-      <!--  <fragment
+        <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.MapFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>-->
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 </LinearLayout>
